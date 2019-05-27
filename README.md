@@ -3,7 +3,7 @@ Description
 
 ---
 ### Team
-1. Andrew Kurochkin, [SanGreel]().
+1. Andrew Kurochkin, [SanGreel](https://github.com/SanGreel).
 2. Yevhen Pozdniakov
 3. Oleksandr Smyrnov
 4. Dmytro Babenko
