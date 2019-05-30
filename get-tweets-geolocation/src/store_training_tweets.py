@@ -52,7 +52,7 @@ if __name__ == "__main__":
     #              -164.639405, 58.806859, -144.152365, 71.76871,         # Alaska
     #              -160.161542, 18.776344, -154.641396, 22.878623]        # Hawaii
 
-    LOCATIONS = [40,579724, -74.272749, 40,976252, -73.678206]          # New York
+    LOCATIONS = [40.579724, -74.272749, 40.976252, -73.678206]          # New York
 
     stream_listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
     stream = tweepy.Stream(auth=auth1, listener=stream_listener)
