@@ -1,13 +1,19 @@
 ## Get tweets by geolocation
 
-## Activate virtual pip environment
-```source venv/bin/activate```
+## Create virtual environment and activate it
+```virtualenv venv && source venv/bin/activate```
+
+## Install libs from requirements.txt
+```pip install -r requirements.txt```
 
 ## Make sure that you run in the separate screen:
 ## mac
 ```mongod```
 ## ubuntu
-```mongod```
+```sudo systemctl start mongodb```
+
+## Check that mongo is running
+```mongo```
 
 ## Start storing tweets to mongo db (be sure that ```mongo``` started)
 ```python src/store_training_tweets.py```
@@ -17,3 +23,4 @@
 
 ## Convert json to csv
 ```python src/tweets_json_to_csv.py ./training_tweets.json ./training_tweets.csv```
+
