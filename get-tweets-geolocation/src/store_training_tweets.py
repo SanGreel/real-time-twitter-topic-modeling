@@ -22,7 +22,7 @@ class StreamListener(tweepy.StreamListener):
 
         # I stored the tweet data in a database called 'training_tweets' in MongoDB, if 
         # 'training_tweets' does not exist it will be created for you.
-        db = client.training_tweets
+        db = client.usa_training_tweets
 
         # Decode JSON
         datajson = json.loads(data)
@@ -31,7 +31,7 @@ class StreamListener(tweepy.StreamListener):
         # called 'training_tweets_collection' of the 'training_tweets' database. If 
         # 'training_tweets_collection' does not exist it will be created for you. 
         if "lang" in datajson and datajson["lang"] == "en":
-            db.training_tweets_collection.insert_one(datajson)
+            db.usa_training_tweets_collection.insert_one(datajson)
 
 
 if __name__ == "__main__":
@@ -48,11 +48,11 @@ if __name__ == "__main__":
     # LOCATIONS are the longitude, latitude coordinate corners for a box that restricts the 
     # geographic area from which you will stream tweets. The first two define the southwest
     # # corner of the box and the second two define the northeast corner of the box. 
-    # LOCATIONS = [-124.7771694, 24.520833, -66.947028, 49.384472,        # Contiguous US
-    #              -164.639405, 58.806859, -144.152365, 71.76871,         # Alaska
-    #              -160.161542, 18.776344, -154.641396, 22.878623]        # Hawaii
+    LOCATIONS = [-124.7771694, 24.520833, -66.947028, 49.384472,        # Contiguous US
+                 -164.639405, 58.806859, -144.152365, 71.76871,         # Alaska
+                 -160.161542, 18.776344, -154.641396, 22.878623]        # Hawaii
 
-    LOCATIONS = [-74.272749, 40.579724, -73.678206, 40.976252]          # New York
+    # LOCATIONS = [-74.272749, 40.579724, -73.678206, 40.976252]          # New York
 
     stream_listener = StreamListener(api=tweepy.API(wait_on_rate_limit=True))
     stream = tweepy.Stream(auth=auth1, listener=stream_listener)

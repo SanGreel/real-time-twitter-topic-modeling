@@ -53,7 +53,7 @@ def tweets_json_to_csv(file_list, csv_output_file):
                     
                     # Status update
                     if count % 100000 == 0:
-                        print 'Just stored tweet #{}'.format(count)
+                        print ("Just stored tweet ", count)
                         
 if __name__ == "__main__":
     
