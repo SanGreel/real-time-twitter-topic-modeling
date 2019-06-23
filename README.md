@@ -11,7 +11,7 @@ Description
 
 ---
 ### Data
-##### dataset 
+Twitter data collected with [our script] (https://github.com/SanGreel/real-time-twitter-topic-modeling).
 
 ---
 ### Instruction to reproduce
@@ -20,7 +20,7 @@ Description
 ```
 pip install -r requirements.txt
 ```
-
+3. Install PySpark with these [instructions] (https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f)
 
 ---
 ### Example of work
