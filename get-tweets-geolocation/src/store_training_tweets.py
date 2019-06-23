@@ -22,7 +22,7 @@ class StreamListener(tweepy.StreamListener):
 
         # I stored the tweet data in a database called 'training_tweets' in MongoDB, if 
         # 'training_tweets' does not exist it will be created for you.
-        db = client.usa_training_tweets
+        db = client.usa_training_tweets_23_06
 
         # Decode JSON
         datajson = json.loads(data)
@@ -31,7 +31,7 @@ class StreamListener(tweepy.StreamListener):
         # called 'training_tweets_collection' of the 'training_tweets' database. If 
         # 'training_tweets_collection' does not exist it will be created for you. 
         if "lang" in datajson and datajson["lang"] == "en":
-            db.usa_training_tweets_collection.insert_one(datajson)
+            db.usa_training_tweets_collection_23_06.insert_one(datajson)
 
 
 if __name__ == "__main__":
