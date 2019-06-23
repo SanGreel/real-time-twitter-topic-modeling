@@ -1,4 +1,8 @@
+get-tweets-by-geolocation/*.csv
+get-tweets-by-geolocation/backup/*
 get-tweets-geolocation/*
+get-tweets-by-geolocation/src/*.csv
+
 data/*
 
 ### JupyterNotebook ###
