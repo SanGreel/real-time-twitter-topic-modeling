@@ -15,11 +15,12 @@ Twitter data collected with [our script](https://github.com/SanGreel/real-time-t
 
 ---
 ### Instruction to reproduce
-1. Download [dataset](https://github.com/) into folder "data".
+1. Download [dataset]() into folder "data".
 2. Run  in the root folder:
 ```
 pip install -r requirements.txt
 ```
+
 3. Install PySpark with these [instructions](https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f)
 
 ---
