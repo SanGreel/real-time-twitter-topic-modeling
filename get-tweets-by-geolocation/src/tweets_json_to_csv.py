@@ -1,6 +1,15 @@
 import json
 import unicodecsv as csv    # unicodecsv ensures that emojis are preserved
 
+import sys
+
+# $1 - json file name
+# $2 - csv file name
+g_json_name = sys.argv[1]
+g_csv_name = sys.argv[2]
+print ("Input JSON file name: ", g_json_name)
+print ("Output CSV file name: ", g_csv_name)
+
 def tweets_json_to_csv(file_list, csv_output_file):
     '''
     INPUT: list of JSON files
@@ -57,4 +66,4 @@ def tweets_json_to_csv(file_list, csv_output_file):
                         
 if __name__ == "__main__":
     
-    tweets_json_to_csv(['training_tweets.json'], 'training_tweets.csv')
+    tweets_json_to_csv([g_json_name], g_csv_name)

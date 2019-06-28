@@ -16,11 +16,13 @@
 ```mongo```
 
 ## Start storing tweets to mongo db (be sure that ```mongo``` started)
-```python src/store_training_tweets.py```
+```python src/store_training_tweets.py usa_training_tweets_dd_mm```
 
 ## Pull the data from MongoDB as a json file
-```mongoexport --db training_tweets --collection training_tweets_collection --out training_tweets.json```
-
+```mongoexport --db usa_training_tweets_dd_mm --collection training_tweets_collection --out usa_training_tweets.json```
 ## Convert json to csv
-```python src/tweets_json_to_csv.py ./training_tweets.json ./training_tweets.csv```
+```python src/tweets_json_to_csv.py ./usa_training_tweets.json ./usa_training_tweets.csv```
+## or
+```./src/mongo_to_csv.sh dd_mm```
+
 

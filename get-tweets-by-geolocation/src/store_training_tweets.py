@@ -1,6 +1,12 @@
 import tweepy
 import json
 from pymongo import MongoClient
+import sys
+
+# $1 - db name
+g_db_name = sys.argv[1]
+
+print ("DB name: ", g_db_name)
 
 class StreamListener(tweepy.StreamListener):
     """tweepy.StreamListener is a class provided by tweepy used to access
@@ -22,7 +28,8 @@ class StreamListener(tweepy.StreamListener):
 
         # I stored the tweet data in a database called 'training_tweets' in MongoDB, if 
         # 'training_tweets' does not exist it will be created for you.
-        db = client.usa_training_tweets_23_06
+        # db = client.g_db_name
+        db = client[g_db_name]
 
         # Decode JSON
         datajson = json.loads(data)
@@ -31,7 +38,7 @@ class StreamListener(tweepy.StreamListener):
         # called 'training_tweets_collection' of the 'training_tweets' database. If 
         # 'training_tweets_collection' does not exist it will be created for you. 
         if "lang" in datajson and datajson["lang"] == "en":
-            db.usa_training_tweets_collection_23_06.insert_one(datajson)
+            db.training_tweets_collection.insert_one(datajson)
 
 
 if __name__ == "__main__":
