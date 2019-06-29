@@ -2,6 +2,9 @@ get-tweets-by-geolocation/*.csv
 get-tweets-by-geolocation/backup/*
 get-tweets-geolocation/*
 get-tweets-by-geolocation/src/*.csv
+get-tweets-geolocation/data/*
+get-tweets-geolocation/backup_json/*
+get-tweets-geolocation/*.json
 
 data/*
 
