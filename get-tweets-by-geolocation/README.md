@@ -33,4 +33,7 @@
 ## Convert json file to mongodb 
 ```mongoimport -d usa_training_tweets_dd_mm -c training_tweets_collection usa_training_tweets_dd_mm.json```
 
+## Merge all csv files from 'data' into 'training_tweets.csv'
+```python merge_csv.py```
+
 
