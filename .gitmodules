@@ -1,0 +1,3 @@
+[submodule "get_google_trends_data/pytrends"]
+	path = get_google_trends_data/pytrends
+	url = https://github.com/DmytroBabenko/pytrends
