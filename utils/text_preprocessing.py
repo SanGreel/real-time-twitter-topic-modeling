@@ -1,7 +1,7 @@
 import re
 import nltk
 from nltk.stem import WordNetLemmatizer 
-from variables import channels_not_to_consider
+from utils.channels_to_filter import channels_not_to_consider
 
 nltk.download('stopwords')
 nltk.download('wordnet')
@@ -12,7 +12,7 @@ stop_word_list = nltk.corpus.stopwords.words('english')
 
 def filter_tweet(tweet):
     
-    """Filter out tweets based on their length
+    """Filter out tweets based on their length.
 
     Parameters:
     tweet (str): tweet itself
@@ -31,9 +31,9 @@ def filter_tweet(tweet):
         
     return not is_filtered
          
-def process_tweet(tweet, lemmatizer=lemmatizer, tokenizer=tokenizer, stop_word_list=stop_word_list):
+def process_text(tweet, lemmatizer=lemmatizer, tokenizer=tokenizer, stop_word_list=stop_word_list):
     
-    """Tweet processing
+    """Classic text processing.
 
     Parameters:
     tweet (str): tweet itself
@@ -60,3 +60,42 @@ def process_tweet(tweet, lemmatizer=lemmatizer, tokenizer=tokenizer, stop_word_l
                        if token not in stop_word_list]
     
     return processed_tweet
+
+
+def process_hashtags(tweet, lemmatizer=lemmatizer, stop_word_list=stop_word_list):
+    
+    """Filter out all text except hashtags
+
+    Parameters:
+    tweet (str): tweet itself
+    lemmatizer (obj): nltk object for lemmatization
+    stop_word_list (list): list with stop words
+
+    Returns:
+    list: list of tokens, which represent input tweet 
+
+   """
+   
+    tweet = tweet.lower() # get lowercase
+    hashtags = re.findall(r"#(\w+)", tweet)
+    hashtags = [lemmatizer.lemmatize(hashtag) for hashtag in hashtags if hashtag not in stop_word_list]
+
+    return hashtags
+
+
+def process_urls(tweet, tokenizer=tokenizer):
+    
+    """Filter out all text except urls and parse them
+
+    Parameters:
+    tweet (str): tweet itself
+    lemmatizer (obj): nltk object for lemmatization
+    tokenizer (obj): nltk object for tokenization
+    stop_word_list (list): list with stop words
+
+    Returns:
+    list: list of tokens, which represent input tweet 
+
+   """
+    
+    pass

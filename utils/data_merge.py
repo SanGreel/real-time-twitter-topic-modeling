@@ -1,5 +1,5 @@
 from datetime import datetime
-from trends import str_tweet_to_datetime
+from utils.trends import str_tweet_to_datetime
 
 wrong_date = datetime.strptime("Mon Jun 03 00:00:00 +0000 2000", '%a %b %d %H:%M:%S %z %Y')
 
