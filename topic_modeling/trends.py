@@ -1,4 +1,7 @@
+import operator
 from datetime import datetime
+from pyspark.sql import Row
+
 
 wrong_date = datetime.strptime("Mon Jun 03 00:00:00 +0000 2000", '%a %b %d %H:%M:%S %z %Y')
 
@@ -25,15 +28,13 @@ def tweet2google_timeframe(frame_start_datetime, frame_finish_datetime):
     end_date = str_tweet_to_datetime(frame_finish_datetime)
     tim
     
-def get_google_trends_by_geo(geo):
-    if geo == 'US':
-        return google_trends_search_topics_us, google_trends_search_queries_us
-    elif geo == 'US-NY':
-        return google_trends_search_topics_us_ny, google_trends_search_queries_us_ny
+def get_google_trends_by_geo(geo, google_trends_dict):
+    if geo in google_trends_dict:
+        return google_trends_dict[geo][0], google_trends_dict[geo][1]
     
     return None, None
     
-def unique_google_trends_by_time_frame(df):
+def unique_google_trends_by_time_frame(df, spark):
     data = df.collect()
     rising_dict = {}
     top_dict = {}
@@ -94,7 +95,7 @@ def get_geo_name(geo):
         return "United States"
     return ""
 
-def print_google_trend_title(start_date, finish_date, name):
+def print_google_trend_title(start_date, finish_date, name, geo):
     start_date_str = start_date.strftime("%Y-%m-%d")
     if start_date == finish_date:
         print(f"\nGoogle trends {name} in {get_geo_name(geo)} during {start_date_str}")
