@@ -1,0 +1,3 @@
+[submodule "topic_modeling/pytrends"]
+	path = topic_modeling/pytrends
+	url = https://github.com/DmytroBabenko/pytrends.git
