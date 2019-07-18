@@ -1,0 +1,3 @@
+[submodule "pytrends"]
+	path = pytrends
+	url = https://github.com/DmytroBabenko/pytrends
