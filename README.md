@@ -36,5 +36,5 @@ git submodule init
 git submodule update
 ```
 
-3. Now you are ready to go throw the file realtime_twitter_topic_modeling_pyspark.ipynb, where you can find full pipeline from loading data to modeling and comparison with Google trends.
+3. Now you are ready to go throw the file [realtime_twitter_topic_modeling_pyspark.ipynb](https://github.com/SanGreel/real-time-twitter-topic-modeling/blob/master/realtime_twitter_topic_modeling_pyspark.ipynb), where you can find full pipeline from loading data to modeling and comparison with Google trends.
 
