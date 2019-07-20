@@ -6,6 +6,7 @@ As an example, there are many cases when companies use Twitter to identify vulne
 
   For algorithm for topic modeling, we settled on the LDA - Latent Dirichlet Allocation - unsupervised learning algorithm, which assumes that the topics of the documents have a Dirichlet distribution and the words in the topics also have a Dirichlet distribution. The technical part of the can be found in the [realtime_twitter_topic_modeling_pyspark.ipynb](https://github.com/SanGreel/real-time-twitter-topic-modeling/blob/master/realtime_twitter_topic_modeling_pyspark.ipynb).
 <br/>
+
 ### Team
 1. Andrew Kurochkin, [SanGreel](https://github.com/SanGreel).
 2. Yevhen Pozdniakov, [YevgenyW](https://github.com/YevgenyW).
@@ -13,9 +14,11 @@ As an example, there are many cases when companies use Twitter to identify vulne
 4. Dmytro Babenko, [DmytroBabenko](https://github.com/DmytroBabenko).
 5. Anton Shcherbyna, [antonshcherbyna](https://github.com/antonshcherbyna).
 <br/>
+
 ### Data
 Twitter data was collected with the script that can be found in the folder [twitter-data-collector](https://github.com/SanGreel/real-time-twitter-topic-modeling/tree/master/twitter-data-collector) . The main purpose of the script is to collect tweets from Twitter API (you should have Twitter Developer account).
 <br/>
+
 #### Final dataset
 - 332548 tweets (10Gb in mongodb, ~100Mb in csv) from New-York geolocation since 30 of May up to 15 of June;
 - 6617029 tweets (~1.69Gb in csv) from USA geolocation since 15 of June up to now.
