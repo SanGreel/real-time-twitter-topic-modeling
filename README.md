@@ -14,7 +14,7 @@ As an example, there are many cases when companies use Twitter to identify vulne
 5. Anton Shcherbyna, [antonshcherbyna](https://github.com/antonshcherbyna).
 
 ### Data
-Twitter data was collecting with the script that can be found in the folder [twitter-data-collector](https://github.com/SanGreel/real-time-twitter-topic-modeling/tree/master/twitter-data-collector) . The main purpose of the script is to collect tweets from Twitter API (you should have Twitter Developer account).
+Twitter data was collected with the script that can be found in the folder [twitter-data-collector](https://github.com/SanGreel/real-time-twitter-topic-modeling/tree/master/twitter-data-collector) . The main purpose of the script is to collect tweets from Twitter API (you should have Twitter Developer account).
 
 #### Final dataset
 - 332548 tweets (10Gb in mongodb, ~100Mb in csv) from New-York geolocation since 30 of May up to 15 of June;
