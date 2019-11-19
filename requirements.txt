@@ -1,6 +1,6 @@
 unicodecsv==0.14.1
 pandas==0.23.1
-nltk==3.2.5
+nltk==3.4.5
 pyspark==2.4.2
 pymongo==3.8.0
 tweepy==3.8.0
